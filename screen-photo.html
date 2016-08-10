@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>SADAN</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  	<script>
+  		$(function() {
+  			$('.thumb').on('click', function() {
+  				var dataImg = $(this).data('img');
+  				var photoClass = 'photo' + dataImg;
+  				var mainEle = $('.photo-main')[0];
+  				mainEle.classList = 'photo-main';
+  				$('.photo-main').addClass(photoClass);
+  			});
+  		});
+  	</script>
+
+  </head>
+
+  <body>
+  	<div id="sadan-wrapper">
+	  	<div id="page2" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="photo-wrapper">
+          		<div class="photo-main"></div>
+          		<div class="photo-list">
+          			<div class="inner">
+	          			<div id="thumb1" data-img="1" class="thumb"></div>
+	          			<div id="thumb11" data-img="11" class="thumb"></div>
+	          			<div id="thumb2" data-img="2" class="thumb"></div>
+	          			<div id="thumb3" data-img="3" class="thumb"></div>
+	          			<div id="thumb4" data-img="4" class="thumb"></div>
+	          			<div id="thumb5" data-img="5" class="thumb"></div>
+	          			<div id="thumb6" data-img="6" class="thumb"></div>
+	          			<div id="thumb10" data-img="10" class="thumb"></div>
+	          			<div id="thumb7" data-img="7" class="thumb"></div>
+	          			<div id="thumb8" data-img="8" class="thumb"></div>
+	          			<div id="thumb9" data-img="9" class="thumb"></div>
+	          		</div>	
+          		</div>
+	  		</div>
+
+	  		<div id="footer" data-role="footer" class="two-icons">
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">Back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  		</div>
+	  	</div>
+
+
+  	</div>
+  </body>
+</html>

@@ -4,10 +4,23 @@
   	<title>SADAN</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
   	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  	<script>
+  		$(function() {
+  			$('.thumb').on('click', function() {
+  				var dataImg = $(this).data('img');
+  				var photoClass = 'photo' + dataImg;
+  				var mainEle = $('.photo-main')[0];
+  				mainEle.classList = 'photo-main';
+  				$('.photo-main').addClass(photoClass);
+  			});
+  		});
+  	</script>
   </head>
 
   <body>
@@ -18,14 +31,51 @@
 	  		</div>
 
 	  		<div class="main">
-	  			<p>Your Message here...</p>
-	  			<a href="#page2" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-grid">Scan it</a>
+	  			<p class="mytext">Welcome to Verizon Wireless!</p>
+          <a href="#qr-page" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop">Scan to Pick Up!
+          </a>
+	  			<a href="#qr-page2" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user">Scan Phone to Check-In
+          </a>
+          		<a href="#page4" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">Don't Have a QR Code?
+          </a>
 	  		</div>
-	  		
+
+
+	  		<div id="footer" data-role="footer" class="two-icons">
+	  			<a href="#page1" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  			<a href="#page4" class="ui-btn ui-btn-icon-top ui-icon-heart">Media</a>
+	  		</div>
+	  	</div>
+
+	  	<div id="qr-page" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="main">
+	  			<a href="#page2" data-transition="slide" class="block-img"><img src="assets/img-qr.png"></a>
+	  		</div>
+
 	  		<div id="footer" data-role="footer">
-	  			<a href="" class="ui-btn ui-btn-icon-top ui-icon-back">back</a>
-	  			<a href="" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
-	  			<a href="" class="ui-btn ui-btn-icon-top ui-icon-heart">Media</a>
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  			<a href="#page4" class="ui-btn ui-btn-icon-top ui-icon-heart">Media</a>
+	  		</div>
+	  	</div>
+
+	  	<div id="qr-page2" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="main">
+	  			<a href="#page3" data-transition="slide" class="block-img"><img src="assets/img-qr.png"></a>
+	  		</div>
+
+	  		<div id="footer" data-role="footer">
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  			<a href="#page4" class="ui-btn ui-btn-icon-top ui-icon-heart">Media</a>
 	  		</div>
 	  	</div>
 
@@ -35,17 +85,98 @@
 	  		</div>
 
 	  		<div class="main">
-	  			<p>Page #2</p>
-	  			<a href="" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-heart">Media</a>
+	  			<p class="text">Your device is ready for pickup!</p>
+            	<img src="assets/employee.jpg" class="person">
+            	<p class="text">has your device</p>
+	  			<a href="#page3" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">Explore</a>
 	  		</div>
-	  		
+
 	  		<div id="footer" data-role="footer">
 	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">back</a>
 	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
-	  			<a href="" class="ui-btn ui-btn-icon-top ui-icon-heart">Media</a>
+	  			<a href="#page4" class="ui-btn ui-btn-icon-top ui-icon-heart">Media</a>
 	  		</div>
 	  	</div>
 
+	  	<div id="page3" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="main pad-extra1">
+	          <a href="" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Assistance</a>
+	          <a href="#music" data-transition="slide" class="sadan-btn ui-btn ui-shadow ui-corner-all fa fa-music"></a>
+	          <a href="#photobooth" data-transition="slide" class="sadan-btn ui-btn ui-shadow ui-corner-all fa fa-camera-retro"></a>
+	          <a href="" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-forbidden">Do Not Disturb</a>
+	  		</div>
+
+	  		<div id="footer" data-role="footer" class="two-icons">
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">Back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  		</div>
+	  	</div>
+
+	  	<div id="page4" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="main pad-extra2">
+	          <a href="#music" data-transition="slide" class="sadan-btn ui-btn ui-shadow ui-corner-all fa fa-music"></a>
+	          <a href="#photobooth" data-transition="slide" class="sadan-btn ui-btn ui-shadow ui-corner-all fa fa-camera-retro"></a>
+	          <a href="" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">Assistance</a>
+	  		</div>
+
+	  		<div id="footer" data-role="footer" class="two-icons">
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">Back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  		</div>
+	  	</div>
+
+	  	<div id="photobooth" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="photo-wrapper">
+          		<div class="photo-main"></div>
+          		<div class="photo-list">
+          			<div class="inner">
+	          			<div id="thumb1" data-img="1" class="thumb"></div>
+	          			<div id="thumb11" data-img="11" class="thumb"></div>
+	          			<div id="thumb2" data-img="2" class="thumb"></div>
+	          			<div id="thumb3" data-img="3" class="thumb"></div>
+	          			<div id="thumb4" data-img="4" class="thumb"></div>
+	          			<div id="thumb5" data-img="5" class="thumb"></div>
+	          			<div id="thumb6" data-img="6" class="thumb"></div>
+	          			<div id="thumb10" data-img="10" class="thumb"></div>
+	          			<div id="thumb7" data-img="7" class="thumb"></div>
+	          			<div id="thumb8" data-img="8" class="thumb"></div>
+	          			<div id="thumb9" data-img="9" class="thumb"></div>
+	          		</div>	
+          		</div>
+	  		</div>
+
+	  		<div id="footer" data-role="footer" class="two-icons">
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">Back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  		</div>
+	  	</div>
+
+	  	<div id="music" class="page" data-role="page">
+	  		<div id="hdr" data-role="header">
+	  			<img src="assets/logo.png" id="logo">
+	  		</div>
+
+	  		<div class="photo-wrapper">
+          		<div class="music-main"></div>
+	  		</div>
+
+	  		<div id="footer" data-role="footer" class="two-icons">
+	  			<a href="" data-rel="back" class="ui-btn ui-btn-icon-top ui-icon-back">Back</a>
+	  			<a href="#page1" data-transition="slide" class="ui-btn ui-btn-icon-top ui-icon-home">Home</a>
+	  		</div>
+	  	</div>
 
   	</div>
   </body>
